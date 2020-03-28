@@ -2,16 +2,19 @@ package uvsq.pglp_4_2;
 
 public class Quit implements Command{
 
-	private Interpreteur interpret;
-
-	@Override
-	public void apply() {
-		// TODO Auto-generated method stub
-		
+	Interpreteur interpret;
+	
+	public Quit(	Interpreteur interpret) {
+		this.interpret = interpret;
 	}
 
 	@Override
-	public void undo() {
+	public void execute() {
+		interpret.exit();
+	}
+
+	@Override
+	public void undo(CommandFactory cf) {
 		// TODO Auto-generated method stub
 		
 	}

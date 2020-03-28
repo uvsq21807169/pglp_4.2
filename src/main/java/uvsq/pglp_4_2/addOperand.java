@@ -9,14 +9,18 @@ public class addOperand implements Command{
 	}
 
 	@Override
-	public void apply() {
+	public void execute() {
 		// TODO Auto-generated method stub
-		System.out.println("add op");
+	}
+	
+	public void execute(Double op) {
+		// TODO Auto-generated method stub
+		interpret.ajouterOperand(op);
 	}
 
 	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		
+	public void undo(CommandFactory cf) {
+		// TODO Auto-generated method stub	
+		interpret.deleteLastOp();
 	}
 }

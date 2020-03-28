@@ -9,13 +9,13 @@ public class Multiplication implements Command{
 	}
 
 	@Override
-	public void apply() {
+	public void execute() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void undo() {
+	public void undo(CommandFactory cf) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -7,52 +7,46 @@ public class SaisieRPN {
 	
 	Scanner sc;
 	MoteurRPN moteur;
+	CommandFactory cf;
+
 	
 	public SaisieRPN() {
 		
 		sc = new Scanner(System.in);
-		moteur = new MoteurRPN();
 		
-		moteur.addCommand("+", new Addition(moteur));
-		moteur.addCommand("-", new Soustraction(moteur));
-		moteur.addCommand("*", new Multiplication(moteur));
-		moteur.addCommand("/", new Division(moteur));
-		moteur.addCommand("addOperand", new addOperand(moteur));
+		cf = new CommandFactory();
+		
+		moteur = new MoteurRPN(cf);
+		
+		
+		cf.addCommand("undo", new Undo(moteur));
+		cf.addCommand("quit", new Quit(moteur));
+		cf.addCommand("+", new Addition(moteur));
+		cf.addCommand("-", new Soustraction(moteur));
+		cf.addCommand("*", new Multiplication(moteur));
+		cf.addCommand("/", new Division(moteur));
 		
 		while(true) {
-			Command command = getNewCommand(); 
-			if (command instanceof Quit ) {
-				System.out.println("Programme fini !");
-				return ; 
-			}
-			else{
-				moteur.history.add(command);
-				command.apply();
-			}
-			moteur.showOperands();
 
-		}
-		
-	}
-	
-	protected Command getNewCommand() { 
-		
-		
-		while(true) {
 			String line = sc.nextLine();
-
-			if(moteur.commands.containsKey(line)) {
-				return moteur.commands.get(line);
-			}
+			
 			try {
 				Double operand = Double.parseDouble(line);
-				moteur.addOperand(operand);
-				return moteur.commands.get("addOperand");			
+				cf.addCommand(line, new addOperand(moteur));
+				cf.executeCommand(line);
+				moteur.afficherPile();
 			}
 			catch(Exception ex) {
-				System.out.println("Vous devez saisir un operand OU +,-,/,* OU undo OU quit !\n");
+				if( cf.executeCommand(line)) {
+					moteur.afficherPile();
+				}
+				else {
+					System.out.println("Vous devez saisir un operand OU +,-,/,* OU undo OU quit !\n");
+				}
 			}
+		
 		}
+		
 	}
 
 }

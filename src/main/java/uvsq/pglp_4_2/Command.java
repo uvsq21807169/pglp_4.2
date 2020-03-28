@@ -1,7 +1,9 @@
 package uvsq.pglp_4_2;
 
+/*the Command interface*/
 public interface Command {
 	
-	public abstract void apply(); 
-	public abstract void undo ();
+	public abstract void execute(); 
+	public abstract void undo (CommandFactory cf);
+	
 }

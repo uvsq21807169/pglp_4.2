@@ -2,30 +2,26 @@ package uvsq.pglp_4_2;
 
 import java.util.ArrayList;
 
-//Receiver
+/*the derived Receiver class */
+
 public class MoteurRPN extends Interpreteur{
 	
-	private ArrayList<Double> operands;
 
-	public MoteurRPN() {
-		operands = new ArrayList<Double>();
-	}
-	
-	public void addOperand(double operand) {
-		operands.add(operand);
+	public MoteurRPN(CommandFactory cf) {
+		super(cf);
 	}
 	
 	public void addition() {
 		
-		if(operands.size() < 2)
+		if(pile.size() < 2)
 			return;
 		
-		double op1 = operands.get(operands.size()-1);
-		operands.remove(operands.size()-1);
-		double op2 = operands.get(operands.size()-1);
-		operands.remove(operands.size()-1);
+		double op1 = pile.get(pile.size()-1);
+		pile.remove(pile.size()-1);
+		double op2 = pile.get(pile.size()-1);
+		pile.remove(pile.size()-1);
 		
-		operands.add(op1+op2);
+		pile.add(op1+op2);
 		
 		
 	}
@@ -38,26 +34,5 @@ public class MoteurRPN extends Interpreteur{
 	public void division() {
 		
 	}
-	
-	public ArrayList<Double> getOperands() {
-		return operands;
-	}
-	
-	public void showOperands() {
-		System.out.print("-- pile : ");
-		for(double d: operands)
-			System.out.print(d + " ");
-		System.out.println();
-	}
-
-	public void undo() {
-		for(int i = 0; i< history.size()-2; i++) {
-			System.out.println(history.get(i).getClass());
-			history.get(i).apply();
-		}
 		
-	}
-
-	
-	
 }

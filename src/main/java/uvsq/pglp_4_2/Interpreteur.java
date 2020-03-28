@@ -5,31 +5,41 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/*the Receiver class*/
+
 public class Interpreteur {
 	
-	ArrayList<Command> history = new ArrayList<>(); 
+	ArrayList<Double> pile = new ArrayList<Double>();
+	CommandFactory cf;
 	
-	Map<String, Command> commands;
+	public Interpreteur(CommandFactory cf) {
+		this.cf = cf;
+	}
 	
-	Command undo;
-	Command quit;
+	public void ajouterOperand(Double op) {
+		pile.add(op);
+	}
 	
-	public Interpreteur() {
-		
-		commands = new HashMap<>();
-		commands.put("undo", new Undo(history));
-		commands.put("quit", new Quit());
+	public void deleteLastOp(){
+		pile.remove(pile.size()-1);
+	}
+	
+	public void exit() {
+		System.out.println("\nLe Programme est terminé .\n");
+		System.exit(0);
+	}
 
+	public void precedent() {
+		System.out.println("Supression de la derniere commande ... \n");
+		
 	}
 	
-	public void addCommand(String name, Command command) {
-		commands.put(name, command);
+	public void afficherPile() {
+		System.out.print("-- pile : ");
+		for(double d: pile)
+			System.out.print(d + " ");
+		System.out.println();
 	}
 	
-	public void executeCommand(String name) {
-		if(commands.containsKey(name)) {
-			commands.get(name).apply();
-		}
-	}
 	
 }

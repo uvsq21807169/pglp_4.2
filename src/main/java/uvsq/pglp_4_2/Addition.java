@@ -2,21 +2,19 @@ package uvsq.pglp_4_2;
 
 public class Addition implements Command{
 
-	private MoteurRPN interpret;
-
-	public Addition(MoteurRPN interpret) {
-		this.interpret = interpret;
+	MoteurRPN interpret;
+	
+	public Addition(Interpreteur interpret) {
+		this.interpret = (MoteurRPN)interpret;
 	}
 
 	@Override
-	public void apply() {
+	public void execute() {
 		interpret.addition();
 	}
 
 	@Override
-	public void undo() {
-		System.out.println("undo undoun");
-		interpret.undo();
+	public void undo(CommandFactory cf) {
 	}
 
 }
