@@ -11,12 +11,11 @@ public class Undo implements Command{
 	public Undo(Interpreteur interpret) { 
 		this.interpret = interpret;
 	}
-	
 	@Override
-	public void execute() {
-		interpret.precedent();
-		//((Command) history.get(history.size()-2)).undo(); 
+	public void execute() {} 
+	
+	public void execute(ArrayList<Command> history) {
+		interpret.precedent(history);
 	} 
 	
-	public void undo(CommandFactory cf) {}
 }

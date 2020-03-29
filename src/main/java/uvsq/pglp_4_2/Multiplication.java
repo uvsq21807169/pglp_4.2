@@ -2,22 +2,17 @@ package uvsq.pglp_4_2;
 
 public class Multiplication implements Command{
 
-	private Interpreteur interpret;
+	private MoteurRPN interpret;
 
-	public Multiplication(Interpreteur interpret) {
+	public Multiplication(MoteurRPN interpret) {
 		this.interpret = interpret;
 	}
 
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		interpret.multiplication();
 	}
 
-	@Override
-	public void undo(CommandFactory cf) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

@@ -8,12 +8,12 @@ import java.util.Map;
 
 public class CommandFactory {
 	
-	private Map<String, Command> history;
+	private ArrayList<Command> history;
 	Map<String, Command> commands;
 	
 
 	public CommandFactory() {
-		history = new HashMap<String, Command>();
+		history = new ArrayList<Command>();
 		commands = new HashMap<>();
 	}
 	
@@ -23,30 +23,13 @@ public class CommandFactory {
 	
 	public boolean executeCommand(String name) {
 		if(commands.containsKey(name)) {
-			
-			if(commands.get(name).getClass().getSimpleName().equals("addOperand")) {
-				((addOperand)commands.get(name)).execute(Double.parseDouble(name));
+			if(name.equals("undo")) {
+				((Undo)commands.get(name)).execute(history);
 			}
 			else {
-				if(commands.get(name).equals("undo")) {
-					for(String l: history.keySet()) {
-						
-						try {
-							
-							//faut mettre hshmap avec meme nom et se enregistre comme entrée
-							Double operand = Double.parseDouble(l);
-							executeCommand(l);
-							moteur.afficherPile();
-						}
-						catch(Exception ex) {
-					}
-				}
-				else {
-					commands.get(name).execute();
-					history.put(name, commands.get(name));
-				}
-			}
-						
+				commands.get(name).execute();
+				history.add(commands.get(name));
+			}			
 			return true;
 
 		}

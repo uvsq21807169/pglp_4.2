@@ -2,22 +2,17 @@ package uvsq.pglp_4_2;
 
 public class Soustraction implements Command{
 
-	private Interpreteur interpret;
+	private MoteurRPN interpret;
 
-	public Soustraction(Interpreteur interpret) {
+	public Soustraction(MoteurRPN interpret) {
 		this.interpret = interpret;
 	}
 
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		interpret.soustraction();
 	}
 
-	@Override
-	public void undo(CommandFactory cf) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

@@ -13,8 +13,5 @@ public class Addition implements Command{
 		interpret.addition();
 	}
 
-	@Override
-	public void undo(CommandFactory cf) {
-	}
 
 }

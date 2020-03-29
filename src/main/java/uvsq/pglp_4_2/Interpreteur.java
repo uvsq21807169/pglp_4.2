@@ -9,19 +9,28 @@ import java.util.Stack;
 
 public class Interpreteur {
 	
-	ArrayList<Double> pile = new ArrayList<Double>();
-	CommandFactory cf;
+	ArrayList<Double> pile;
 	
-	public Interpreteur(CommandFactory cf) {
-		this.cf = cf;
+	public Interpreteur() {
+		pile = new ArrayList<Double>();
 	}
 	
 	public void ajouterOperand(Double op) {
 		pile.add(op);
 	}
 	
-	public void deleteLastOp(){
+	public Double popLastElement() {	
+		double op = pile.get(pile.size()-1);
 		pile.remove(pile.size()-1);
+		return op;
+	}
+	
+	public Boolean moreThanTwoOp() {
+		if(pile.size() >= 2)
+			return true;
+		
+		System.out.println("Pas assez d'operandes !\n");
+		return false;
 	}
 	
 	public void exit() {
@@ -29,9 +38,13 @@ public class Interpreteur {
 		System.exit(0);
 	}
 
-	public void precedent() {
+	public void precedent(ArrayList<Command> history) {
 		System.out.println("Supression de la derniere commande ... \n");
-		
+		pile.clear();
+		history.remove(history.size()-1);
+		for(Command com: history) {
+			com.execute();
+		}		
 	}
 	
 	public void afficherPile() {

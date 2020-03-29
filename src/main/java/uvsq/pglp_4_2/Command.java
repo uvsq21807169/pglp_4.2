@@ -4,6 +4,5 @@ package uvsq.pglp_4_2;
 public interface Command {
 	
 	public abstract void execute(); 
-	public abstract void undo (CommandFactory cf);
 	
 }

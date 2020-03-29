@@ -6,33 +6,32 @@ import java.util.ArrayList;
 
 public class MoteurRPN extends Interpreteur{
 	
-
-	public MoteurRPN(CommandFactory cf) {
-		super(cf);
-	}
-	
 	public void addition() {
 		
-		if(pile.size() < 2)
-			return;
-		
-		double op1 = pile.get(pile.size()-1);
-		pile.remove(pile.size()-1);
-		double op2 = pile.get(pile.size()-1);
-		pile.remove(pile.size()-1);
-		
-		pile.add(op1+op2);
-		
-		
+		if(moreThanTwoOp()) {
+			pile.add(popLastElement()+popLastElement());
+		}	
 	}
+	
 	public void soustraction() {
-			
+		
+		if(moreThanTwoOp()) {
+			pile.add(popLastElement()-popLastElement());
+		}	
 	}
+	
 	public void multiplication() {
 		
+		if(moreThanTwoOp()) {
+			pile.add(popLastElement()*popLastElement());
+		}
 	}
+	
 	public void division() {
 		
+		if(moreThanTwoOp()) {
+			pile.add(popLastElement()/popLastElement());
+		}
 	}
 		
 }

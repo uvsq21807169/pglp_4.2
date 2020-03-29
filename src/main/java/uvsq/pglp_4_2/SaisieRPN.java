@@ -16,7 +16,7 @@ public class SaisieRPN {
 		
 		cf = new CommandFactory();
 		
-		moteur = new MoteurRPN(cf);
+		moteur = new MoteurRPN();
 		
 		
 		cf.addCommand("undo", new Undo(moteur));
@@ -32,7 +32,7 @@ public class SaisieRPN {
 			
 			try {
 				Double operand = Double.parseDouble(line);
-				cf.addCommand(line, new addOperand(moteur));
+				cf.addCommand(line, new addOperand(moteur, operand));
 				cf.executeCommand(line);
 				moteur.afficherPile();
 			}
