@@ -20,14 +20,12 @@ public class Undo implements Command{
 	public Undo(Interpreteur interpret) { 
 		this.interpret = interpret;
 	}
-	/* (non-Javadoc)
-	 * @see uvsq.pglp_4_2.Command#execute()
-	 */
+	
 	@Override
 	public void execute() {} 
 	
 	/**
-	 * @param history
+	 * @param history : historique des commandes
 	 */
 	public void execute(ArrayList<Command> history) {
 		interpret.precedent(history);

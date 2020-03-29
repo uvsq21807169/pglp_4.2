@@ -13,14 +13,14 @@ import java.util.ArrayList;
 public class MoteurRPN extends Interpreteur{
 	
 	/**
-	 * @param op
+	 * @param op : operande a ajouter
 	 */
 	public void ajouterOperand(Double op) {
 		pile.add(op);
 	}
 	
 	/**
-	 * @return
+	 * @return : retourn le derner element de la pile
 	 */
 	public Double popLastElement() {	
 		double op = pile.get(pile.size()-1);
@@ -29,7 +29,7 @@ public class MoteurRPN extends Interpreteur{
 	}
 	
 	/**
-	 * @return
+	 * @return : retourner vraie si la pile a plus de deux operandes
 	 */
 	public Boolean moreThanTwoOp() {
 		if(pile.size() >= 2)
@@ -39,9 +39,6 @@ public class MoteurRPN extends Interpreteur{
 		return false;
 	}
 	
-	/**
-	 * 
-	 */
 	public void addition() {
 		
 		if(moreThanTwoOp()) {
@@ -49,9 +46,6 @@ public class MoteurRPN extends Interpreteur{
 		}	
 	}
 	
-	/**
-	 * 
-	 */
 	public void soustraction() {
 		
 		if(moreThanTwoOp()) {
@@ -62,19 +56,14 @@ public class MoteurRPN extends Interpreteur{
 		}	
 	}
 	
-	/**
-	 * 
-	 */
 	public void multiplication() {
 		
 		if(moreThanTwoOp()) {
 			pile.add(popLastElement()*popLastElement());
 		}
 	}
+
 	
-	/**
-	 * 
-	 */
 	public void division() {
 		
 		if(moreThanTwoOp()) {
@@ -85,9 +74,6 @@ public class MoteurRPN extends Interpreteur{
 		}
 	}
 	
-	/**
-	 * @return
-	 */
 	public ArrayList<Double> getOperands(){
 		return pile;
 	}

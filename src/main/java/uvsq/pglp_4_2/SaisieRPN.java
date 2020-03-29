@@ -16,7 +16,7 @@ public class SaisieRPN {
 
 	
 	/**
-	 * 
+	 * Enregistrement de toutes les commandes
 	 */
 	public SaisieRPN() {
 		
@@ -34,16 +34,16 @@ public class SaisieRPN {
 		cf.addCommand("*", new Multiplication(moteur));
 		cf.addCommand("/", new Division(moteur));
 		
-
+		/**
+		 * boucle infinie pour la saisie des commandes
+		 */
 		while(true) {
 			
-			
-
 			String line = sc.nextLine();
 			
 			try {
 				Double operand = Double.parseDouble(line);
-				cf.addCommand(line, new addOperand(moteur, operand));
+				cf.addCommand(line, new AddOperand(moteur, operand));
 				cf.executeCommand(line);
 				moteur.afficherPile();
 			}

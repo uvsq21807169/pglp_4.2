@@ -17,9 +17,7 @@ public class Quit implements Command{
 		this.interpret = interpret;
 	}
 
-	/* (non-Javadoc)
-	 * @see uvsq.pglp_4_2.Command#execute()
-	 */
+	
 	@Override
 	public void execute() {
 		interpret.exit();

@@ -13,13 +13,10 @@ public class Addition implements Command{
 	/**
 	 * @param interpret
 	 */
-	public Addition(Interpreteur interpret) {
-		this.interpret = (MoteurRPN)interpret;
+	public Addition(MoteurRPN interpret) {
+		this.interpret = interpret;
 	}
 
-	/* (non-Javadoc)
-	 * @see uvsq.pglp_4_2.Command#execute()
-	 */
 	@Override
 	public void execute() {
 		interpret.addition();

@@ -16,26 +16,22 @@ public class CommandFactory {
 	private ArrayList<Command> history;
 	Map<String, Command> commands;
 	
-
-	/**
-	 * 
-	 */
 	public CommandFactory() {
 		history = new ArrayList<>();
 		commands = new HashMap<>();
 	}
 	
 	/**
-	 * @param name
-	 * @param command
+	 * @param name : le nom de la commande, Ex : "+"
+	 * @param command : l'objet de la commande concraite
 	 */
 	public void addCommand(String name, Command command) {
 		commands.put(name, command);
 	}
 	
 	/**
-	 * @param name
-	 * @return
+	 * @param name : le nom de la commande, Ex : "+"
+	 * @return : si la commande existe, retourner vraie
 	 */
 	public boolean executeCommand(String name) {
 		if(commands.containsKey(name)) {

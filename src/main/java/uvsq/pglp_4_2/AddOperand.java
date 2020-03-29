@@ -7,23 +7,21 @@ package uvsq.pglp_4_2;
  * class de la command concraite d'ajout d'operande qui dérive l'interface Command 
  *
  */
-public class addOperand implements Command{
+public class AddOperand implements Command{
 
 	private MoteurRPN interpret;
 	public double operand;
 	
 	/**
 	 * @param interpret
-	 * @param operand
+	 * @param operand : operande a enregistré pour l'ajouter a la pile 
 	 */
-	public addOperand(MoteurRPN interpret, Double operand) {
+	public AddOperand(MoteurRPN interpret, Double operand) {
 		this.interpret = interpret;
 		this.operand = operand;
 	}
 
-	/* (non-Javadoc)
-	 * @see uvsq.pglp_4_2.Command#execute()
-	 */
+	
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub

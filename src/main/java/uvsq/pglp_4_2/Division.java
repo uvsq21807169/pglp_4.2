@@ -18,9 +18,6 @@ public class Division implements Command{
 		this.interpret = interpret;
 	}
 
-	/* (non-Javadoc)
-	 * @see uvsq.pglp_4_2.Command#execute()
-	 */
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub

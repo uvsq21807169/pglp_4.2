@@ -15,15 +15,12 @@ public class Interpreteur {
 	
 	ArrayList<Double> pile;
 	
-	/**
-	 * 
-	 */
 	public Interpreteur() {
 		pile = new ArrayList<Double>();
 	}
 	
 	/**
-	 * 
+	 * Stop le programme 
 	 */
 	public void exit() {
 		System.out.println("\nLe Programme est terminé .\n");
@@ -31,7 +28,9 @@ public class Interpreteur {
 	}
 
 	/**
-	 * @param history
+	 * @param history : historique des commandes
+	 * si l'historique n'est pas vide, on vide la pile des operandes et on réexécute toutes 
+	 * les commandes sauf la derniere
 	 */
 	public void precedent(ArrayList<Command> history) {
 		if(history.size() == 0)
@@ -45,7 +44,7 @@ public class Interpreteur {
 	}
 	
 	/**
-	 * 
+	 * l'afichege de la pile apres chaque commande
 	 */
 	public void afficherPile() {
 		System.out.print("-- pile : ");

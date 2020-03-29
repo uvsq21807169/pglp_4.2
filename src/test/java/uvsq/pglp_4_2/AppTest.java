@@ -33,7 +33,7 @@ public class AppTest  extends TestCase{
 		moteur = new MoteurRPN();
 		cf = new CommandFactory();
 		Double operand = 2.2;
-		cf.addCommand(operand.toString(), new addOperand(moteur, operand));
+		cf.addCommand(operand.toString(), new AddOperand(moteur, operand));
 		cf.executeCommand(operand.toString());		
 		assertEquals(moteur.getOperands().get(0), operand);	
 	}
@@ -45,9 +45,9 @@ public class AppTest  extends TestCase{
 		cf.addCommand("+", new Addition(moteur));	
 		Double op1 = 2.0;
 		Double op2 = 3.0;
-		cf.addCommand(op1.toString(), new addOperand(moteur, op1));
+		cf.addCommand(op1.toString(), new AddOperand(moteur, op1));
 		cf.executeCommand(op1.toString());	
-		cf.addCommand(op2.toString(), new addOperand(moteur, op2));
+		cf.addCommand(op2.toString(), new AddOperand(moteur, op2));
 		cf.executeCommand(op2.toString());	
 		cf.executeCommand("+");
 		assertEquals(moteur.getOperands().get(0), 5.0);	
@@ -61,9 +61,9 @@ public class AppTest  extends TestCase{
 		cf.addCommand("-", new Soustraction(moteur));
 		Double op1 = 3.0;
 		Double op2 = 2.0;
-		cf.addCommand(op1.toString(), new addOperand(moteur, op1));
+		cf.addCommand(op1.toString(), new AddOperand(moteur, op1));
 		cf.executeCommand(op1.toString());	
-		cf.addCommand(op2.toString(), new addOperand(moteur, op2));
+		cf.addCommand(op2.toString(), new AddOperand(moteur, op2));
 		cf.executeCommand(op2.toString());	
 		cf.executeCommand("-");
 		assertEquals(moteur.getOperands().get(0), 1.0);	
@@ -76,9 +76,9 @@ public class AppTest  extends TestCase{
 		cf.addCommand("*", new Multiplication(moteur));
 		Double op1 = 2.0;
 		Double op2 = 3.0;
-		cf.addCommand(op1.toString(), new addOperand(moteur, op1));
+		cf.addCommand(op1.toString(), new AddOperand(moteur, op1));
 		cf.executeCommand(op1.toString());	
-		cf.addCommand(op2.toString(), new addOperand(moteur, op2));
+		cf.addCommand(op2.toString(), new AddOperand(moteur, op2));
 		cf.executeCommand(op2.toString());	
 		cf.executeCommand("*");
 		assertEquals(moteur.getOperands().get(0), 6.0);	
@@ -91,9 +91,9 @@ public class AppTest  extends TestCase{
 		cf.addCommand("/", new Division(moteur));
 		Double op1 = 2.0;
 		Double op2 = 1.0;
-		cf.addCommand(op1.toString(), new addOperand(moteur, op1));
+		cf.addCommand(op1.toString(), new AddOperand(moteur, op1));
 		cf.executeCommand(op1.toString());	
-		cf.addCommand(op2.toString(), new addOperand(moteur, op2));
+		cf.addCommand(op2.toString(), new AddOperand(moteur, op2));
 		cf.executeCommand(op2.toString());	
 		cf.executeCommand("/");
 		assertEquals(moteur.getOperands().get(0), 2.0);	
@@ -106,9 +106,9 @@ public class AppTest  extends TestCase{
 		cf.addCommand("+", new Addition(moteur));
 		Double op1 = 2.0;
 		Double op2 = 1.0;
-		cf.addCommand(op1.toString(), new addOperand(moteur, op1));
+		cf.addCommand(op1.toString(), new AddOperand(moteur, op1));
 		cf.executeCommand(op1.toString());	
-		cf.addCommand(op2.toString(), new addOperand(moteur, op2));
+		cf.addCommand(op2.toString(), new AddOperand(moteur, op2));
 		cf.executeCommand(op2.toString());	
 		cf.executeCommand("+");
 		
