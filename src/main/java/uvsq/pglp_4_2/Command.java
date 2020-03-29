@@ -1,8 +1,16 @@
 package uvsq.pglp_4_2;
 
-/*the Command interface*/
+/**
+ * 
+ * @author ismail
+ * l'interface Command 
+ *
+ */
 public interface Command {
 	
+	/**
+	 * 
+	 */
 	public abstract void execute(); 
 	
 }

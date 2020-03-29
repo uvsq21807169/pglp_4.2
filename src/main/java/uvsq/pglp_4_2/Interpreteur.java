@@ -5,40 +5,37 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-/*the Receiver class*/
-
+/**
+ * 
+ * @author ismail
+ * The receiver class
+ * class générique qui contient l'inplmentation des deux commandes UNDO et QUIT
+ */
 public class Interpreteur {
 	
 	ArrayList<Double> pile;
 	
+	/**
+	 * 
+	 */
 	public Interpreteur() {
 		pile = new ArrayList<Double>();
 	}
 	
-	public void ajouterOperand(Double op) {
-		pile.add(op);
-	}
-	
-	public Double popLastElement() {	
-		double op = pile.get(pile.size()-1);
-		pile.remove(pile.size()-1);
-		return op;
-	}
-	
-	public Boolean moreThanTwoOp() {
-		if(pile.size() >= 2)
-			return true;
-		
-		System.out.println("Pas assez d'operandes !\n");
-		return false;
-	}
-	
+	/**
+	 * 
+	 */
 	public void exit() {
 		System.out.println("\nLe Programme est terminé .\n");
 		System.exit(0);
 	}
 
+	/**
+	 * @param history
+	 */
 	public void precedent(ArrayList<Command> history) {
+		if(history.size() == 0)
+			return;
 		System.out.println("Supression de la derniere commande ... \n");
 		pile.clear();
 		history.remove(history.size()-1);
@@ -47,6 +44,9 @@ public class Interpreteur {
 		}		
 	}
 	
+	/**
+	 * 
+	 */
 	public void afficherPile() {
 		System.out.print("-- pile : ");
 		for(double d: pile)

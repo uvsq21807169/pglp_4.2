@@ -1,11 +1,14 @@
 package uvsq.pglp_4_2;
 
 /**
- * Hello world!
+ * Main class
  *
  */
 public class App 
 {
+    /**
+     * @param args
+     */
     public static void main( String[] args )
     {
     	SaisieRPN saisir = new SaisieRPN();

@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/*the Invoker class*/
+/**
+ * 
+ * @author ismail
+ * class Invoker qui contient les commandes et fait appel a aux sous class de Command
+ *
+ */
 
 public class CommandFactory {
 	
@@ -12,15 +17,26 @@ public class CommandFactory {
 	Map<String, Command> commands;
 	
 
+	/**
+	 * 
+	 */
 	public CommandFactory() {
-		history = new ArrayList<Command>();
+		history = new ArrayList<>();
 		commands = new HashMap<>();
 	}
 	
+	/**
+	 * @param name
+	 * @param command
+	 */
 	public void addCommand(String name, Command command) {
 		commands.put(name, command);
 	}
 	
+	/**
+	 * @param name
+	 * @return
+	 */
 	public boolean executeCommand(String name) {
 		if(commands.containsKey(name)) {
 			if(name.equals("undo")) {

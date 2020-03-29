@@ -2,10 +2,46 @@ package uvsq.pglp_4_2;
 
 import java.util.ArrayList;
 
-/*the derived Receiver class */
+/**
+ * 
+ * @author ismail
+ * The derived receiver class
+ * class qui recoit les appels des commandes concraites
+ *
+ */
 
 public class MoteurRPN extends Interpreteur{
 	
+	/**
+	 * @param op
+	 */
+	public void ajouterOperand(Double op) {
+		pile.add(op);
+	}
+	
+	/**
+	 * @return
+	 */
+	public Double popLastElement() {	
+		double op = pile.get(pile.size()-1);
+		pile.remove(pile.size()-1);
+		return op;
+	}
+	
+	/**
+	 * @return
+	 */
+	public Boolean moreThanTwoOp() {
+		if(pile.size() >= 2)
+			return true;
+		
+		System.out.println("Pas assez d'operandes !\n");
+		return false;
+	}
+	
+	/**
+	 * 
+	 */
 	public void addition() {
 		
 		if(moreThanTwoOp()) {
@@ -13,13 +49,22 @@ public class MoteurRPN extends Interpreteur{
 		}	
 	}
 	
+	/**
+	 * 
+	 */
 	public void soustraction() {
 		
 		if(moreThanTwoOp()) {
-			pile.add(popLastElement()-popLastElement());
+			double op1 = popLastElement();
+			double op2= popLastElement();
+
+			pile.add(op2-op1);
 		}	
 	}
 	
+	/**
+	 * 
+	 */
 	public void multiplication() {
 		
 		if(moreThanTwoOp()) {
@@ -27,11 +72,24 @@ public class MoteurRPN extends Interpreteur{
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public void division() {
 		
 		if(moreThanTwoOp()) {
-			pile.add(popLastElement()/popLastElement());
+			double op1 = popLastElement();
+			double op2= popLastElement();
+
+			pile.add(op2/op1);	
 		}
+	}
+	
+	/**
+	 * @return
+	 */
+	public ArrayList<Double> getOperands(){
+		return pile;
 	}
 		
 }

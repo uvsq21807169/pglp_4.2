@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.29">
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Soustraction.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Command.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/SaisieRPN.java">
+<error line="11" column="14" severity="warning" message="Abbreviation in name &apos;SaisieRPN&apos; must contain no more than &apos;2&apos; consecutive capital letters." source="com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"/>
+<error line="49" column="25" severity="warning" message="&apos;}&apos; at column 4 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="51" column="35" severity="warning" message="&apos;(&apos; is followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="53" column="33" severity="warning" message="&apos;}&apos; at column 5 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+<error line="55" severity="warning" message="Line is longer than 100 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/addOperand.java">
+<error line="10" column="14" severity="warning" message="Type name &apos;addOperand&apos; must match pattern &apos;^[A-Z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/CommandFactory.java">
+<error line="44" column="25" severity="warning" message="&apos;}&apos; at column 4 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally)." source="RightCurlySame"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/MoteurRPN.java">
+<error line="13" column="14" severity="warning" message="Abbreviation in name &apos;MoteurRPN&apos; must contain no more than &apos;2&apos; consecutive capital letters." source="com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"/>
+<error line="35" severity="warning" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Undo.java">
+<error line="26" severity="warning" message="&apos;METHOD_DEF&apos; should be separated from previous statement." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Multiplication.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Addition.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Division.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Quit.java">
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/Interpreteur.java">
+<error line="37" severity="warning" message="&apos;if&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+<error line="52" severity="warning" message="&apos;for&apos; construct must use &apos;{}&apos;s." source="com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck"/>
+</file>
+<file name="/home/user/eclipse-java-oxygen-workspace/pglp_4_2/src/main/java/uvsq/pglp_4_2/App.java">
+<error line="8" column="1" severity="warning" message="&apos;{&apos; at column 1 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="12" column="28" severity="warning" message="&apos;(&apos; is followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="12" column="44" severity="warning" message="&apos;)&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="13" column="5" severity="warning" message="&apos;{&apos; at column 5 should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+</file>
+</checkstyle>

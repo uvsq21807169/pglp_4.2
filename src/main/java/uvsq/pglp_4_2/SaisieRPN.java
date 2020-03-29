@@ -2,7 +2,12 @@ package uvsq.pglp_4_2;
 
 import java.util.Scanner;
 
-/* Client */
+/**
+ * 
+ * @author ismail
+ * Class Client
+ *
+ */
 public class SaisieRPN {
 	
 	Scanner sc;
@@ -10,6 +15,9 @@ public class SaisieRPN {
 	CommandFactory cf;
 
 	
+	/**
+	 * 
+	 */
 	public SaisieRPN() {
 		
 		sc = new Scanner(System.in);
@@ -26,7 +34,10 @@ public class SaisieRPN {
 		cf.addCommand("*", new Multiplication(moteur));
 		cf.addCommand("/", new Division(moteur));
 		
+
 		while(true) {
+			
+			
 
 			String line = sc.nextLine();
 			
